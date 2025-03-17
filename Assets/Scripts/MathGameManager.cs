@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MathGameManager : MonoBehaviour
 {
     public GameObject mathPanel;
+    public GameObject gameOverPanel;
     public Text questionText;
     public InputField answerInput;
     public Text scoreText;
+    public Text finalScore;
 
     public Image[] heartSprites;
     public Sprite fullHeart;
@@ -24,6 +27,7 @@ public class MathGameManager : MonoBehaviour
     {
         // Make sure the math panel is initially not visible
         mathPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
         StartCoroutine(ScoreIncrement());
         StartCoroutine(MathQuestionTimer());
         UpdateUI();
@@ -99,17 +103,21 @@ public class MathGameManager : MonoBehaviour
 
     void ResetMathGame()
     {
+        Time.timeScale = 1;
         answerInput.text = "";
         mathPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
         isMathActive = false;
         UpdateUI();
     }
 
     void GameOver()
     {
-        ResetMathGame();
+        finalScore.text = scoreText.text;
+        mathPanel.SetActive(false);
+        gameOverPanel.SetActive(true);
+        isMathActive = false;
         Time.timeScale = 0;
-        Debug.Log("Game Over!");
     }
 
     IEnumerator ScoreIncrement()
@@ -134,6 +142,18 @@ public class MathGameManager : MonoBehaviour
             else
                 heartSprites[i].sprite = emptyHeart;
         }
+    }
+
+    public void MainMenu()
+    {
+        ResetMathGame();
+        SceneManager.LoadSceneAsync(1);
+    }
+
+    public void Restart()
+    {
+        ResetMathGame();
+        SceneManager.LoadSceneAsync(0);
     }
 
 }
