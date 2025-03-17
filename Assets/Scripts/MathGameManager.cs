@@ -52,6 +52,7 @@ public class MathGameManager : MonoBehaviour
         isMathActive = true;
         mathPanel.SetActive(true);
         GenerateMathProblem();
+        answerInput.Select();
     }
 
     void GenerateMathProblem()
