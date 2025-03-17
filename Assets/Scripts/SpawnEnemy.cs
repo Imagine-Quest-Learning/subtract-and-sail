@@ -7,6 +7,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float spawnDistance = 10f;
     private float spawnTimer;
 
+    private MathGameManager gameManager;
+
+    void Start()
+    {
+        gameManager = GameObject.FindObjectOfType<MathGameManager>();
+    }
+
     void Update()
     {
         spawnTimer -= Time.deltaTime;
@@ -19,8 +26,11 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Vector2 spawnPos = GetSpawnPosition();
-        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        if (gameManager.playerHearts > 0)
+        {
+            Vector2 spawnPos = GetSpawnPosition();
+            Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        }
     }
 
     Vector2 GetSpawnPosition()

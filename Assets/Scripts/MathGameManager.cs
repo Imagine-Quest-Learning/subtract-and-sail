@@ -17,7 +17,7 @@ public class MathGameManager : MonoBehaviour
     public int minMathInterval = 5;
     public int maxMathInterval = 12;
     private int score = 0;
-    private int playerHearts = 3;
+    public int playerHearts = 3;
     private int correctAnswer;
 
     void Start()
@@ -107,6 +107,8 @@ public class MathGameManager : MonoBehaviour
 
     void GameOver()
     {
+        ResetMathGame();
+        Time.timeScale = 0;
         Debug.Log("Game Over!");
     }
 
