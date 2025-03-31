@@ -24,9 +24,9 @@ These docs provide everything you need to download, run, and play the game.
 ## Mockups
 Here are some mockup designs that were created prior to the game development.
 
-![Desktop - 15](https://github.com/user-attachments/assets/16a39017-7954-411a-b30c-99d5bfd8da5f)
-![Desktop - 16](https://github.com/user-attachments/assets/015dfb6d-ae66-4e75-82e2-5e4bdf44aab3)
-![Desktop - 17](https://github.com/user-attachments/assets/84667649-2650-486f-aa24-5cd358489ef1)
+Fire Cannon          |  Lose Heart | Answer Question |
+:-------------------------:|:-------------------------:|:-------------------------:
+| ![Desktop - 15](https://github.com/user-attachments/assets/16a39017-7954-411a-b30c-99d5bfd8da5f) | ![Desktop - 16](https://github.com/user-attachments/assets/015dfb6d-ae66-4e75-82e2-5e4bdf44aab3) | ![Desktop - 17](https://github.com/user-attachments/assets/84667649-2650-486f-aa24-5cd358489ef1) |
 
 
 
