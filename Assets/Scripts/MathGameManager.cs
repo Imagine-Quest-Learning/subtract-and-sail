@@ -31,6 +31,8 @@ public class MathGameManager : MonoBehaviour
         StartCoroutine(ScoreIncrement());
         StartCoroutine(MathQuestionTimer());
         UpdateUI();
+
+        answerInput.onEndEdit.AddListener(delegate { CheckAnswerOnEnter(); });
     }
 
     IEnumerator MathQuestionTimer()
@@ -89,6 +91,15 @@ public class MathGameManager : MonoBehaviour
         // Reset question input field after submitting
         answerInput.text = "";
     }
+
+    void CheckAnswerOnEnter()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            CheckAnswer();
+        }
+    }
+
 
     public void PlayerHit()
     {
